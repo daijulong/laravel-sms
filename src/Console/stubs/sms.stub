@@ -1,0 +1,10 @@
+<?php
+
+namespace DummyNamespace;
+
+use Daijulong\LaravelSms\Sms;
+
+class DummyClass extends Sms
+{
+DummyMethods
+}

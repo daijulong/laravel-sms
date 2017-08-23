@@ -1,0 +1,44 @@
+<?php
+
+namespace DummyNamespace;
+
+use Daijulong\LaravelSms\Agent;
+use Daijulong\Sms\Interfaces\Sms;
+
+class DummyClass extends Agent
+{
+
+    /**
+     * 代理器名称
+     */
+    protected $agent_name = 'DummyClass';
+
+    /**
+     * 发送短信
+     *
+     * @param string $to
+     * @param Sms $sms
+     * @param array $params
+     * @return bool
+     * @throws SmsException
+     */
+    public function send(string $to, Sms $sms, array $params = []): bool
+    {
+        $content = $this->getSmsContent($sms);
+        // ... 具体发送操作
+
+
+        // ... 记录发送情况
+        $this->result
+            ->setStatus()
+            ->setMessage('')
+            ->setContent($content)
+            ->setParams($params)
+            ->setReceiptId('')
+            ->setReceiptData('');
+
+        // ... return true or false
+        // return true;
+    }
+
+}

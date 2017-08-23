@@ -1,0 +1,33 @@
+{
+    "name": "daijulong/laravel-sms",
+    "description": "A sms send library for laravel5.5+",
+    "type": "library",
+    "require": {
+        "php": ">=7.0",
+        "ext-curl":"*",
+        "daijulong/sms": "*"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "daijulong",
+            "email": "daijulong@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Daijulong\\LaravelSms\\": "src/"
+        }
+    },
+    "minimum-stability": "dev",
+    "extra": {
+    	"laravel": {
+    		"providers": [
+    			"Daijulong\\LaravelSms\\Providers\\SmsServiceProvider"
+    		],
+    		"aliases": {
+              "Sms": "Daijulong\\LaravelSms\\SmsSender"
+            }
+    	}
+    }
+}

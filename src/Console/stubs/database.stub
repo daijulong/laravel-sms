@@ -1,0 +1,40 @@
+<?php
+
+use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
+
+class CreateSmsLogsTable extends Migration
+{
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+        Schema::create('sms_logs', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->string('batch')->nullable()->comment('批次');
+            $table->string('mobile')->comment('接收手机号');
+            $table->string('agent')->comment('代理器');
+            $table->string('status')->comment('发送状态');
+            $table->string('message')->comment('成功或失败消息');
+            $table->string('content')->nullable()->comment('发送内容');
+            $table->json('params')->nullable()->comment('参数');
+            $table->string('receipt_id')->nullable()->comment('回执ID');
+            $table->json('receipt_data')->nullable()->comment('回执数据');
+            $table->timestamps();
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::dropIfExists('sms_logs');
+    }
+}
