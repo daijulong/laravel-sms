@@ -1,6 +1,6 @@
 {
     "name": "daijulong/laravel-sms",
-    "description": "A sms send library for laravel5.5+",
+    "description": "一个灵活的、易于扩展的适用于Laravel5.5+的短信发送工具包",
     "type": "library",
     "require": {
         "php": ">=7.0",

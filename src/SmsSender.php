@@ -18,7 +18,7 @@ class SmsSender
     {
         SmsConfig::load(config('sms'));
         SmsAgent::init();
-        $this->sender = new Daijulong\Sms\SmsSender();
+        $this->sender = new \Daijulong\Sms\SmsSender();
     }
 
     /**
