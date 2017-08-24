@@ -26,10 +26,12 @@ class SmsSender
      *
      * @param string $agent
      * @param array $spare_agents
+     * @return $this
      */
     public function agent(string $agent, array $spare_agents = [])
     {
         $this->sender->agent($agent, $spare_agents);
+        return $this;
     }
 
     /**
@@ -43,6 +45,7 @@ class SmsSender
     public function onlyAgent(string $agent)
     {
         $this->sender->onlyAgent($agent);
+        return $this;
     }
 
     /**
