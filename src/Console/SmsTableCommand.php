@@ -65,7 +65,7 @@ class SmsTableCommand extends Command
     }
 
     /**
-     * Create a base migration file for the session.
+     * Create a base migration file for the log.
      *
      * @return string
      */
